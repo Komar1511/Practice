@@ -1,0 +1,23 @@
+﻿<Window x:Class="Practice.statWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practice"
+        mc:Ignorable="d"
+        Title="statWin" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="DGridStat" BorderThickness="0" FontWeight="DemiBold" Background="Transparent" ScrollViewer.CanContentScroll="False" RowBackground="CornflowerBlue" AutoGenerateColumns="False" IsReadOnly="True" Margin="10,61,10,124.5"  FontSize="14" FontFamily="Arial">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Header="Город" Binding="{Binding city}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Свободно пав." Binding="{Binding free}" ></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Занято пав." Binding="{Binding booked}" ></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Всего пав." Binding="{Binding countPavilions}" ></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Общ.своб.площадь" Binding="{Binding square}" ></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Средняя стоимость кв.м." Binding="{Binding avgPrice, StringFormat='{}{0:N2}'}" ></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Назад" x:Name="BtnBack" Click="BtnBack_Click" Margin="684,10,10,368.5"  FontSize="14" FontFamily="Arial"/>
+        <ComboBox HorizontalContentAlignment="Center" x:Name="ComboShopping" HorizontalAlignment="Left" Margin="10,28,0,0" VerticalAlignment="Top" Width="171" Height="26" SelectionChanged="ComboShopping_SelectionChanged"  FontSize="14" FontFamily="Arial"/>
+    </Grid>
+</Window>

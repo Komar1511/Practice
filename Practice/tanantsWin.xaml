@@ -1,0 +1,32 @@
+﻿<Window x:Class="Practice.tanantsWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practice"
+        mc:Ignorable="d"
+        Title="tanantsWin" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="DGridTanants" BorderThickness="0" FontWeight="DemiBold" Background="Transparent" ScrollViewer.CanContentScroll="False" RowBackground="LightCoral" AutoGenerateColumns="False" IsReadOnly="True" Margin="186,61,10,10.5"  FontSize="14" FontFamily="Arial">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Header="Название" Binding="{Binding title}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Номер телефона" Binding="{Binding numberTanant}" ></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Адрес" Binding="{Binding address}" ></DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Редактировать" Name="BtnEdit" Click="BtnEdit_Click" Width="30" ></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Добавить" Name="BtnAdd" Click="BtnAdd_Click" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top" Width="153" Height="30"/>
+        <Button Content="Выход" Name="BtnBack" Click="BtnBack_Click" Margin="684,10,10,368.5"  FontSize="14" FontFamily="Arial"/>
+        <TextBox HorizontalContentAlignment="Center" Name="titleFind" HorizontalAlignment="Left" Margin="15,238,0,0" VerticalAlignment="Top" Width="171" Height="26" FontSize="14" FontFamily="Arial" TextChanged="titleFind_TextChanged"/>
+        <Image Source="Resources\Эмблема.png" Margin="-19,0,697,327.5"></Image>
+        <TextBlock HorizontalAlignment="Left" Margin="42,219,0,0" TextWrapping="Wrap" Text="По названию" FontSize="14" VerticalAlignment="Top" Height="19" Width="121" FontFamily="Arial"/>
+        <Button Content="Статистика ТЦ" Click="BtnStat_click" Name="BtnStat" HorizontalAlignment="Left" Margin="10,386,0,0" VerticalAlignment="Top" Width="153" Height="26"/>
+
+    </Grid>
+</Window>

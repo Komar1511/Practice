@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# IDE0120: Упростите выражение LINQ
+dotnet_diagnostic.IDE0120.severity = error

@@ -1,0 +1,49 @@
+﻿<Window x:Class="Practice.Shopping"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Practice"
+      mc:Ignorable="d" 
+      Height="450" Width="800"
+      Title="Shopping">
+
+    <Grid>
+        <DataGrid x:Name="DGridShopping" BorderThickness="0" FontWeight="DemiBold" Background="Transparent" ScrollViewer.CanContentScroll="False" RowBackground="LightCoral" AutoGenerateColumns="False" IsReadOnly="True" Margin="186,61,10,10.5"  FontSize="14" FontFamily="Arial">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Header="Название" Binding="{Binding nameShopping}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Статус" Binding="{Binding statusShopping}" ></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Кол-во пав." Binding="{Binding countPavilions}" ></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Город" Binding="{Binding city}" ></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Стоимость" Binding="{Binding priceShopping, StringFormat='{}{0:N2}'}" ></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Этажность" Binding="{Binding countFloor}" ></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Коэф.Добав.Стоим." Binding="{Binding coefficientShopping}" ></DataGridTextColumn>
+                <DataGridTemplateColumn Header="Фото">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding image}" Width="150"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Редактировать" Name="BtnEdit" Click="BtnEdit_Click" Width="30" ></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Добавить" Name="BtnAdd" Click="BtnAdd_Click" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top" Width="153" Height="30"/>
+        <Button Content="Удалить" Name="BtnDelete" Click="BtnDelete_Click" Margin="10,335,632,55.5"/>
+        <Button Content="Назад" Name="BtnBack" Click="BtnBack_Click" Margin="684,10,10,368.5"  FontSize="14" FontFamily="Arial"/>
+        <ComboBox HorizontalContentAlignment="Center" Name="ComboStatus" HorizontalAlignment="Left" Margin="15,134,0,0" VerticalAlignment="Top" Width="166" Height="26"  FontSize="14" FontFamily="Arial" SelectionChanged="ComboStatus_SelectionChanged"/>
+        <TextBlock HorizontalAlignment="Left" Margin="42,110,0,0" TextWrapping="Wrap" Text="Статус" FontSize="14" VerticalAlignment="Top" Height="19" Width="121" FontFamily="Arial"/>
+        <ComboBox HorizontalContentAlignment="Center" Name="ComboCity" HorizontalAlignment="Left" Margin="15,238,0,0" VerticalAlignment="Top" Width="171" Height="26" SelectionChanged="ComboCity_SelectionChanged"  FontSize="14" FontFamily="Arial">
+        </ComboBox>
+        <Image Source="Resources\Эмблема.png" Margin="-19,0,697,327.5"></Image>
+        <TextBlock HorizontalAlignment="Left" Margin="42,219,0,0" TextWrapping="Wrap" Text="Город" FontSize="14" VerticalAlignment="Top" Height="19" Width="121" FontFamily="Arial"/>
+        
+    </Grid>
+</Window>
