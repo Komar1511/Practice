@@ -149,7 +149,7 @@ namespace Practice
         private void Rent_Click(object sender, RoutedEventArgs e)
         {
             var rnt = DGridPavilions.SelectedItems.Cast<Pavilions>().FirstOrDefault();
-            RentWin win = new RentWin(rnt);
+            RentWin win = new RentWin(rnt, PavilionsEntities.GetContext().Shoppings.Find(idShop));
             win.Show();
             this.Close();
         }

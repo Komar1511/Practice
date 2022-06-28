@@ -21,14 +21,16 @@ namespace Practice
     {
         private Pavilions pavilion;
         int Tant_ID;
+        int idShop = 0;
         public List<Tanants> tanantsCollection { get; set; }
         public DateTime Start { get; set; }
         public DateTime Stop { get; set; }
 
-        public RentWin(Pavilions selectedPavilon)
+        public RentWin(Pavilions selectedPavilon, Shoppings currentShopping)
 
         {
             InitializeComponent();
+            idShop = currentShopping.idShopping;
             Start = DateTime.Today;
             Stop = DateTime.Today;
             tanantsCollection = PavilionsEntities.GetContext().Tanants.ToList();
@@ -60,7 +62,7 @@ namespace Practice
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-            PavilionsWin win = new PavilionsWin(null);
+            PavilionsWin win = new PavilionsWin(PavilionsEntities.GetContext().Shoppings.Find(idShop));
             win.Show();
             this.Close();
         }

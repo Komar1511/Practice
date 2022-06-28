@@ -9,9 +9,9 @@
     <Grid>
         <Button Content="Назад" HorizontalAlignment="Left" Margin="685,10,0,0" VerticalAlignment="Top" Width="105" Height="39" Click="BtnBack_Click"/>
         <Button Content="Арендовать" HorizontalAlignment="Left" Margin="540,343,0,0" VerticalAlignment="Top" Width="156" Height="50" Click="Button_Click"/>
-        <TextBlock Foreground="AliceBlue" FontSize="20" HorizontalAlignment="Left" Margin="10,96,0,0" TextWrapping="Wrap" Text="Арендатор" VerticalAlignment="Top" Height="40" Width="127"/>
-        <TextBlock Foreground="AliceBlue" FontSize="20" HorizontalAlignment="Left" Margin="10,161,0,0" TextWrapping="Wrap" Text="Дата Начала" VerticalAlignment="Top" Height="40" Width="127"/>
-        <TextBlock Foreground="AliceBlue" FontSize="20" HorizontalAlignment="Left" Margin="10,261,0,0" TextWrapping="Wrap" Text="Дата конца" VerticalAlignment="Top" Height="40" Width="127"/>
+        <TextBlock Foreground="OrangeRed" FontSize="20" HorizontalAlignment="Left" Margin="10,96,0,0" TextWrapping="Wrap" Text="Арендатор" VerticalAlignment="Top" Height="40" Width="127"/>
+        <TextBlock Foreground="OrangeRed" FontSize="20" HorizontalAlignment="Left" Margin="10,161,0,0" TextWrapping="Wrap" Text="Дата Начала" VerticalAlignment="Top" Height="40" Width="127"/>
+        <TextBlock Foreground="OrangeRed" FontSize="20" HorizontalAlignment="Left" Margin="10,261,0,0" TextWrapping="Wrap" Text="Дата конца" VerticalAlignment="Top" Height="40" Width="127"/>
         <ComboBox Name="ComboTanants" SelectedItem="{Binding currentTenants}" HorizontalAlignment="Left" Margin="160,96,0,0" VerticalAlignment="Top" Width="339" Height="40"/>
         <DatePicker Name="StartPick" SelectedDate="{Binding Rental_Start}" HorizontalAlignment="Left" Margin="160,161,0,0" VerticalAlignment="Top" Height="95" Width="339"/>
         <DatePicker Name="EndPick" Text="Привет" SelectedDate="{Binding Rental_End}" HorizontalAlignment="Left" Margin="160,261,0,0" VerticalAlignment="Top" Height="89" Width="339"/>
